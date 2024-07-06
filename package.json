@@ -12,8 +12,14 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@kyvg/vue3-notification": "^3.2.1",
+    "@phosphor-icons/vue": "github:phosphor-icons/vue",
     "axios": "^1.7.2",
+    "firebase": "^10.12.2",
+    "phosphor-react": "^1.4.1",
     "pinia": "^2.1.7",
+    "primeicons": "^7.0.0",
+    "react-icons": "^5.2.1",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
