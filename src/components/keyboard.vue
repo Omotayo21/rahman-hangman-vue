@@ -54,7 +54,7 @@ const buttonClass = (key) => {
   } else if (mainStore.incorrectGuesses.includes(key)) {
     return 'bg-red-500 text-white cursor-not-allowed';
   }
-  return 'bg-white text-blue-900 hover:bg-gray-800';
+  return 'bg-white text-blue-900 hover:bg-gray-400';
 };
 </script>
 
