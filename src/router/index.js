@@ -1,13 +1,10 @@
-import LoginView from '../views/LoginView.vue'
-import SignupView from '../views/SignupView.vue'
-import ShopView from '../views/ShopView.vue'
-import AboutView from '../views/AboutView.vue'
-import CartView from '../views/CartView.vue'
-import ProductDetails from '../views/ProductDetails.vue'
-import CheckoutView from '../views/CheckoutView.vue'
+import HomepageView from '../views/HomepageView.vue'
+import RulesView from '../views/RulesView.vue'
+import CategoryView from '../views/CategoryView.vue'
+import GameSection from '../views/GameSection.vue'
+
 import { createRouter, createWebHistory } from 'vue-router'
-import CompleteView from '../views/CompleteView.vue'
-import ContactView from '../views/ContactView.vue'
+
 
 
 const router = createRouter({
@@ -15,48 +12,25 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'login',
-      component: LoginView
+      name: 'home',
+      component: HomepageView
     },
     {
-      path: '/signup',
-      name: 'signup',
-      component: SignupView
+      path: '/rules',
+      name: 'rules',
+      component: RulesView
     },
+   
     {
-      path: '/shop',
-      name: 'shop',
-      component: ShopView
+      path: '/game',
+      name: 'game',
+      component: CategoryView
     },
+    
     {
-      path: '/about',
-      name: 'about',
-      component: AboutView
-    },
-    {
-      path: '/products/:id',
-      name: 'details',
-      component: ProductDetails
-    },
-    {
-      path: '/cart',
-      name: 'cart',
-      component: CartView
-    },
-    {
-      path: '/checkout',
-      name: 'checkout',
-      component: CheckoutView
-    },
-    {
-      path: '/complete',
-      name: 'complete',
-      component: CompleteView
-    },
-    {
-      path: '/contact',
-      name: 'contact',
-      component: ContactView
+      path: '/game/:category',
+      name: 'category',
+      component: GameSection
     }
   ]
 })

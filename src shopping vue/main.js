@@ -1,6 +1,7 @@
+
 import './index.css'
 import 'primeicons/primeicons.css'
-import Notifications from '@kyvg/vue3-notification'
+import  Notifications  from '@kyvg/vue3-notification'
 
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'

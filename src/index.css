@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities
+@tailwind utilities;
+
+
+body {
+  font-family: 'Mouse Memoirs', sans-serif;
+}
