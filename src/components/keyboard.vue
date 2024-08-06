@@ -6,7 +6,7 @@
       @click="handleKeyClick(key)"
       :disabled="isKeyDisabled(key)"
       :class="buttonClass(key)"
-      class="key-button text-xl w-24 font-mouse-memoirs font-bold h-16 sm:rounded-[1rem] lg:rounded-md flex items-center justify-center  text-white focus:outline-none sm:w-12 sm:h-12 sm:text-base md:w-20 md:h-16 md:text-lg"
+      class="key-button text-xl w-24 font-mouse-memoirs font-bold h-16 sm:rounded-[1rem] lg:rounded-md flex items-center justify-center  text-blue-900 focus:outline-none sm:w-12 sm:h-12 sm:text-base md:w-20 md:h-16 md:text-lg"
     >
       {{ key }}
     </button>
@@ -54,7 +54,7 @@ const buttonClass = (key) => {
   } else if (mainStore.incorrectGuesses.includes(key)) {
     return 'bg-red-500 text-white cursor-not-allowed';
   }
-  return 'bg-gray-300 text-black hover:bg-gray-400';
+  return 'bg-white text-blue-900 hover:bg-gray-800';
 };
 </script>
 
