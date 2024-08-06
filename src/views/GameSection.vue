@@ -1,7 +1,7 @@
 <template>
-  <div class="flex flex-col items-center gap-y-12 font-mouse-memoirs justify-center min-h-screen bg-[#042372]">
+  <div class="flex flex-col items-center gap-y-12 font-mouse-memoirs justify-center min-h-screen bg-[#042372] overflow-hidden">
     <Header />
-   <div class="sm:w-[22rem] md:w-auto">
+   <div class="sm:w-[22rem] md:w-auto overflow-hidden">
     <WordContainer :word="currentWord" />
    </div>
     <Keyboard />
