@@ -4,7 +4,7 @@ export const useMainStore = defineStore('main', {
   state: () => ({
     isModalOpen: false,
     currentCategory: '',
-    currentWord: [], // Array of letters including spaces
+    currentWord: '',
     correctGuesses: [],
     incorrectGuesses: [],
     gameOver: false,
@@ -18,6 +18,12 @@ export const useMainStore = defineStore('main', {
     openModal() {
       this.isModalOpen = true
     },
+    checkGameOver() {
+      if (this.incorrectGuesses.length >= 8) {
+        this.gameOver = true
+        this.isModalOpen = true
+      }
+    },
     closeModal() {
       this.isModalOpen = false
       if (this.gameOver || this.gameWon) {
@@ -25,31 +31,22 @@ export const useMainStore = defineStore('main', {
         this.gameWon = false
       }
     },
-    checkGameOver() {
-      if (this.incorrectGuesses.length >= 8) {
-        this.gameOver = true
-        this.isModalOpen = true
-        this.revealAnswer() // Reveal answer on game over
-      }
-    },
     checkGameWin() {
-      const guessedWord = this.currentWord
-        .map((letter) => (this.correctGuesses.includes(letter) || letter === ' ' ? letter : '_'))
-        .join('')
-
-      const originalWord = this.currentWord.join('')
-
-      if (guessedWord === originalWord) {
+      if (
+        this.currentWord
+          .replace(/\s/g, '')
+          .split('')
+          .every((letter) => this.correctGuesses.includes(letter))
+      ) {
         this.gameWon = true
         this.isModalOpen = true
-        this.revealAnswer() // Reveal answer on game win
       }
     },
     setCategory(category) {
       this.currentCategory = category
     },
     setCurrentWord(word) {
-      this.currentWord = word.toUpperCase().split('')
+      this.currentWord = word.toUpperCase()
       this.correctGuesses = []
       this.incorrectGuesses = []
       this.gameOver = false
@@ -67,9 +64,6 @@ export const useMainStore = defineStore('main', {
         this.incorrectGuesses.push(letter)
         this.checkGameOver()
       }
-    },
-    revealAnswer() {
-      this.correctAnswer = this.currentWord.join('')
     }
   }
 })
