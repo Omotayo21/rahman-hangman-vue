@@ -24,6 +24,7 @@
       <router-link to="/game">
         <button
           @click="closeModal"
+           v-if="!gameWon && !gameOver"
           class="border-4 border-blue-400 bg-blue-800 rounded-[2rem] p-4 text-white w-48"
         >
           NEW CATEGORY
