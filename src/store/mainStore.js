@@ -21,7 +21,8 @@ export const useMainStore = defineStore('main', {
     checkGameOver() {
       if (this.incorrectGuesses.length >= 8) {
         this.gameOver = true
-        this.isModalOpen = true
+        this.isModalOpen = true;
+        this.revealAnswer()
       }
     },
     closeModal() {
@@ -64,6 +65,10 @@ export const useMainStore = defineStore('main', {
         this.incorrectGuesses.push(letter)
         this.checkGameOver()
       }
+    },
+    revealAnswer(){
+      this.correctAnswer = this.currentWord
     }
   }
+
 })
