@@ -7,7 +7,7 @@
           :key="`${wordIndex}-${letterIndex}`"
           type="text"
           maxlength="1"
-          class="lg:w-12 sm:w-8 lg:h-24 sm:h-12 rounded-[2rem] bg-blue-900 text-center lg:text-2xl sm:text-base text-white font-bold font-mouse-memoirs border-4 border-blue-500 focus:outline-none"
+          class="lg:w-12 sm:w-6 lg:h-24 sm:h-10 rounded-[2rem] bg-blue-900 text-center lg:text-2xl sm:text-base text-white font-bold font-mouse-memoirs border-4 border-blue-500 focus:outline-none"
           :value="isCorrectGuess(letter) ? letter : ''"
           readonly
         />
